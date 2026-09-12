@@ -72,7 +72,11 @@ export interface NotificationItem {
   timestamp: string;
   read: boolean;
   severity: 'info' | 'warning' | 'success';
+  actionTab?: NavigationTab;
+  actionLabelEn?: string;
+  actionLabelHi?: string;
 }
+
 
 export interface CropActivity {
   id: string;
