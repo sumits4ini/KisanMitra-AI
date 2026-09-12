@@ -64,3 +64,24 @@ export interface CropActivity {
   badgeHi?: string;
   status: 'positive' | 'warning' | 'neutral';
 }
+
+export interface DiagnosisResult {
+  id: string;
+  crop: 'Tomato' | 'Wheat' | 'Rice' | 'Cotton' | 'Mustard' | 'Potato';
+  cropHindi: string;
+  disease: string;
+  diseaseHindi: string;
+  scientificName?: string;
+  confidence: number;
+  severity: 'Mild' | 'Moderate' | 'High' | 'None (Healthy)';
+  severityHindi: string;
+  healthScore: number;
+  symptomsEn: string[];
+  symptomsHi: string[];
+  contributingConditionsEn: string[];
+  contributingConditionsHi: string[];
+  whyAiDetectedEn: string;
+  whyAiDetectedHi: string;
+  imageUrl: string;
+  timestamp: string;
+}

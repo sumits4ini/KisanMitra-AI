@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { UserProfile, FarmCrop, NotificationItem, NavigationTab } from '../types';
+import type { UserProfile, FarmCrop, NotificationItem, NavigationTab, DiagnosisResult } from '../types';
 import { DEFAULT_DEMO_FARMER, DEFAULT_DEMO_CROPS, DEFAULT_NOTIFICATIONS } from '../data/demoFarmer';
 
 interface AppContextType {
@@ -8,6 +8,7 @@ interface AppContextType {
   currentTab: NavigationTab;
   crops: FarmCrop[];
   notifications: NotificationItem[];
+  savedDiagnoses: DiagnosisResult[];
   unreadCount: number;
   loginAsDemo: () => void;
   loginCustom: (name: string, phone: string, location: string, acres: number) => void;
@@ -18,6 +19,7 @@ interface AppContextType {
   markAllNotificationsRead: () => void;
   clearNotifications: () => void;
   updateFarmerSettings: (settings: Partial<UserProfile>) => void;
+  saveDiagnosis: (result: DiagnosisResult) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -46,6 +48,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return saved ? JSON.parse(saved) : DEFAULT_NOTIFICATIONS;
   });
 
+  const [savedDiagnoses, setSavedDiagnoses] = useState<DiagnosisResult[]>(() => {
+    const saved = localStorage.getItem('kisanmitra_diagnoses');
+    return saved ? JSON.parse(saved) : [];
+  });
+
   useEffect(() => {
     if (user) {
       localStorage.setItem('kisanmitra_user', JSON.stringify(user));
@@ -61,6 +68,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   useEffect(() => {
     localStorage.setItem('kisanmitra_notifs', JSON.stringify(notifications));
   }, [notifications]);
+
+  useEffect(() => {
+    localStorage.setItem('kisanmitra_diagnoses', JSON.stringify(savedDiagnoses));
+  }, [savedDiagnoses]);
 
   const loginAsDemo = () => {
     setUser({ ...DEFAULT_DEMO_FARMER });
@@ -95,8 +106,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setUser({ ...DEFAULT_DEMO_FARMER });
     setCrops([...DEFAULT_DEMO_CROPS]);
     setNotifications([...DEFAULT_NOTIFICATIONS]);
+    setSavedDiagnoses([]);
     localStorage.removeItem('kisanmitra_crops');
     localStorage.removeItem('kisanmitra_notifs');
+    localStorage.removeItem('kisanmitra_diagnoses');
     setCurrentTab('dashboard');
   };
 
@@ -125,6 +138,26 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   };
 
+  const saveDiagnosis = (result: DiagnosisResult) => {
+    setSavedDiagnoses(prev => [result, ...prev.filter(d => d.id !== result.id)]);
+
+    // Update crop health score if crop exists
+    setCrops(prev =>
+      prev.map(c => {
+        if (c.name.toLowerCase() === result.crop.toLowerCase()) {
+          return {
+            ...c,
+            healthScore: result.healthScore,
+            diseaseRisk: result.severity === 'High' ? 'high' : result.severity === 'Moderate' ? 'medium' : 'low',
+            healthStatus: result.healthScore >= 80 ? 'good' : result.healthScore >= 60 ? 'warning' : 'critical',
+            lastCheckedDate: 'Just now',
+          };
+        }
+        return c;
+      })
+    );
+  };
+
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
@@ -135,6 +168,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         currentTab,
         crops,
         notifications,
+        savedDiagnoses,
         unreadCount,
         loginAsDemo,
         loginCustom,
@@ -145,6 +179,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         markAllNotificationsRead,
         clearNotifications,
         updateFarmerSettings,
+        saveDiagnosis,
       }}
     >
       {children}
