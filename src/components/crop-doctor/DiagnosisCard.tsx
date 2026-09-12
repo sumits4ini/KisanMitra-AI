@@ -9,9 +9,9 @@ import {
   RefreshCw, 
   BookmarkCheck, 
   Store, 
-  ShieldAlert, 
   Sparkles
 } from 'lucide-react';
+import { TreatmentProtectionGuidance } from './TreatmentProtectionGuidance';
 
 interface DiagnosisCardProps {
   result: DiagnosisResult;
@@ -230,12 +230,9 @@ export const DiagnosisCard: React.FC<DiagnosisCardProps> = ({
           )}
         </div>
 
-        {/* Agricultural Safety Warning Banner */}
-        <div className="mt-5 bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-start space-x-3 text-xs text-amber-900 font-medium">
-          <ShieldAlert className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-          <p>
-            <strong>{t.cropDoctor.safetyWarningTitle}:</strong> {t.safetyNoticeFull}
-          </p>
+        {/* How to Protect Your Crop (Phase 4) */}
+        <div className="mt-8">
+          <TreatmentProtectionGuidance result={result} />
         </div>
 
         {/* Bottom Action Buttons */}

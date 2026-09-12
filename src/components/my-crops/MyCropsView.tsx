@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useApp } from '../../context/AppContext';
 import { Wheat, ArrowRight, Plus, Stethoscope } from 'lucide-react';
+import { CropHealthHistoryTable } from './CropHealthHistoryTable';
 
 export const MyCropsView: React.FC = () => {
   const { t, language } = useLanguage();
@@ -176,6 +177,9 @@ export const MyCropsView: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Crop Health & Treatment History Table (Phase 4) */}
+      <CropHealthHistoryTable />
     </div>
   );
 };

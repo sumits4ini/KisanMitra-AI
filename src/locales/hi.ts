@@ -101,7 +101,7 @@ export const hi = {
     takeAction: 'उपाय करें',
   },
 
-  // Crop Doctor (Phase 3)
+  // Crop Doctor
   cropDoctor: {
     title: 'AI फसल डॉक्टर',
     subtitle: 'रोग, गंभीरता और सुरक्षित उपचार के उपायों की तत्काल पहचान के लिए फसल के पत्ते का फोटो लें या अपलोड करें।',
@@ -134,6 +134,42 @@ export const hi = {
     diagnosisSavedToast: 'जांच परिणाम सफलतापूर्वक मेरी फसलें इतिहास में सहेज लिया गया!',
     viewMarketPlan: 'इस फसल हेतु नजदीकी मंडी भाव देखें',
     safetyWarningTitle: 'महत्वपूर्ण कृषि सुरक्षा सूचना',
+  },
+
+  // Phase 4: Treatment & Prevention
+  treatment: {
+    sectionTitle: 'अपनी फसल की सुरक्षा कैसे करें',
+    sectionSubtitle: 'खेत को सुरक्षित रखने हेतु व्यावहारिक व सुरक्षित कृषि उपाय',
+    whatHappenedTitle: '1. आपकी फसल में क्या हुआ है?',
+    immediateTitle: '2. तत्काल क्या कदम उठाएं (प्राथमिक कार्य)',
+    preventionTitle: '3. भविष्य में रोकथाम के दीर्घकालिक उपाय',
+    treatmentGuidanceTitle: '4. उपयुक्त उपचार व दवा वर्ग की जानकारी',
+    recheckTitle: '5. पुनः जांच व निगरानी (Recheck)',
+    recheckReminderBtn: 'पुनः जांच का रिमाइंडर सेट करें',
+    recheckReminderSet: '3 दिन बाद के लिए रिमाइंडर सेट कर दिया गया है!',
+    findExpertBtn: 'कृषि विशेषज्ञ से सलाह लें',
+    safetyBoxTitle: '⚠ जिम्मेदार कृषि उपयोग संबंधी सूचना',
+    safetyBoxNotice: 'केवल अपनी फसल और क्षेत्र के लिए स्वीकृत उत्पादों का उपयोग करें। उत्पाद लेबल के निर्देशों का पालन करें और जरूरत पड़ने पर योग्य कृषि विशेषज्ञ से परामर्श लें।',
+    purposeLabel: 'उपयोग का उद्देश्य',
+    applicationLabel: 'छिड़काव व प्रयोग की विधि',
+    precautionsLabel: 'जरूरी सावधानियां',
+    expertModalTitle: 'कृषि विशेषज्ञों से संपर्क करें',
+    expertModalSubtitle: 'आपके खेत हेतु सीधी हेल्पलाइन व नजदीकी कृषि विज्ञान केंद्र',
+    kisanCallCenter: 'किसान कॉल सेंटर (निःशुल्क टोल-फ्री)',
+    kisanCallNumber: '1800-180-1551 (प्रातः 6 से रात्रि 10 बजे)',
+    localKVK: 'कृषि विज्ञान केंद्र (KVK करनाल)',
+    localKVKDesc: 'भाकृअनुप-एनडीआरआई परिसर, करनाल, हरियाणा',
+    verifiedExpert: 'डॉ. एस. के. शर्मा (पादप रोग विशेषज्ञ)',
+    callNow: 'हेल्पलाइन पर कॉल करें',
+    whatsappAdvisory: 'व्हाट्सएप पर पूछें',
+    closeModal: 'बंद करें',
+    historyTableTitle: 'फसल स्वास्थ्य व उपचार इतिहास',
+    historyTableSubtitle: 'पूर्व की जांचों, रोग गंभीरता और की गई कार्रवाई का विवरण',
+    dateCol: 'दिनांक',
+    cropCol: 'फसल',
+    diagnosisCol: 'निदान / रोग',
+    severityCol: 'गंभीरता',
+    actionCol: 'सुझाई गई कार्रवाई',
   },
 
   // My Crops

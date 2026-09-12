@@ -101,7 +101,7 @@ export const en = {
     takeAction: 'Take Action',
   },
 
-  // Crop Doctor (Phase 3)
+  // Crop Doctor
   cropDoctor: {
     title: 'AI Crop Doctor',
     subtitle: 'Take or upload a photo of your crop leaf to instantly detect diseases, severity, and safe treatment measures.',
@@ -134,6 +134,42 @@ export const en = {
     diagnosisSavedToast: 'Diagnosis successfully saved to My Crops history!',
     viewMarketPlan: 'Check Mandis for this Crop',
     safetyWarningTitle: 'Important Agronomic Safety Notice',
+  },
+
+  // Phase 4: Treatment & Prevention
+  treatment: {
+    sectionTitle: 'How to Protect Your Crop',
+    sectionSubtitle: 'Actionable, safe agronomic recovery guidance for your field',
+    whatHappenedTitle: '1. What Happened to Your Crop?',
+    immediateTitle: '2. Immediate Actions (Do This First)',
+    preventionTitle: '3. Long-Term Prevention Measures',
+    treatmentGuidanceTitle: '4. Treatment & Pesticide Category Guidance',
+    recheckTitle: '5. Recheck & Monitoring',
+    recheckReminderBtn: 'Set Recheck Reminder',
+    recheckReminderSet: 'Reminder Scheduled for 3 Days from Now!',
+    findExpertBtn: 'Find Agricultural Expert',
+    safetyBoxTitle: '⚠ Responsible Agricultural Application Notice',
+    safetyBoxNotice: 'Use only products approved for your crop and region. Follow the product label. Consult a qualified agricultural expert when needed.',
+    purposeLabel: 'Purpose',
+    applicationLabel: 'Application Guidance',
+    precautionsLabel: 'Important Precautions',
+    expertModalTitle: 'Connect with Agricultural Experts',
+    expertModalSubtitle: 'Direct helpline and local extension support for your farm',
+    kisanCallCenter: 'Kisan Call Centre (Toll-Free)',
+    kisanCallNumber: '1800-180-1551 (6 AM - 10 PM)',
+    localKVK: 'Krishi Vigyan Kendra (KVK Karnal)',
+    localKVKDesc: 'ICAR-NDRI Campus, Karnal, Haryana',
+    verifiedExpert: 'Dr. S. K. Sharma (Plant Pathology Specialist)',
+    callNow: 'Call Hotline',
+    whatsappAdvisory: 'Ask via WhatsApp',
+    closeModal: 'Close',
+    historyTableTitle: 'Crop Health & Treatment History',
+    historyTableSubtitle: 'Historical log of diagnoses, severity, and actions taken',
+    dateCol: 'Date',
+    cropCol: 'Crop',
+    diagnosisCol: 'Diagnosis',
+    severityCol: 'Severity',
+    actionCol: 'Recommended Action',
   },
 
   // My Crops

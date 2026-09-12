@@ -65,6 +65,17 @@ export interface CropActivity {
   status: 'positive' | 'warning' | 'neutral';
 }
 
+export interface TreatmentCategory {
+  categoryEn: string;
+  categoryHi: string;
+  purposeEn: string;
+  purposeHi: string;
+  applicationGuidanceEn: string;
+  applicationGuidanceHi: string;
+  precautionsEn: string;
+  precautionsHi: string;
+}
+
 export interface DiagnosisResult {
   id: string;
   crop: 'Tomato' | 'Wheat' | 'Rice' | 'Cotton' | 'Mustard' | 'Potato';
@@ -84,4 +95,33 @@ export interface DiagnosisResult {
   whyAiDetectedHi: string;
   imageUrl: string;
   timestamp: string;
+  
+  // Phase 4: Treatment & Prevention
+  whatHappenedEn: string;
+  whatHappenedHi: string;
+  immediateActionsEn: string[];
+  immediateActionsHi: string[];
+  preventionEn: string[];
+  preventionHi: string[];
+  treatmentGuidance: TreatmentCategory[];
+  recheckDays: number;
+  recheckGuidanceEn: string;
+  recheckGuidanceHi: string;
+  recommendedActionEn: string;
+  recommendedActionHi: string;
+}
+
+export interface CropHealthHistoryItem {
+  id: string;
+  date: string;
+  crop: string;
+  cropHindi: string;
+  diagnosis: string;
+  diseaseHindi: string;
+  severity: string;
+  severityHindi: string;
+  healthScore: number;
+  recommendedActionEn: string;
+  recommendedActionHi: string;
+  imageUrl?: string;
 }
