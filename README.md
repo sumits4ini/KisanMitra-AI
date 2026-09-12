@@ -299,12 +299,6 @@ To configure custom endpoints or keys:
    VITE_APP_TAGLINE="From Crop Health to Better Markets"
    VITE_APP_VERSION="1.0.0"
 
-   # Optional External Endpoints (leave blank for built-in benchmark engines)
-   VITE_API_BASE_URL=
-   VITE_GOV_MANDI_API_KEY=
-   VITE_WEATHER_API_KEY=
-   VITE_AI_VISION_ENDPOINT=
-   ```
 
 ---
 
@@ -347,39 +341,14 @@ npm run preview
 
 ---
 
-## 15. Deploying to Vercel
 
-The application is pre-configured for seamless deployment to [Vercel](https://vercel.com/):
-
-### Option A: Via Vercel Web Dashboard (Recommended)
-1. Push your repository to GitHub.
-2. Log in to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Import your `kisanmitra-ai` repository.
-4. Framework Preset will be automatically detected as **Vite**.
-5. Build settings:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-   - **Install Command:** `npm install`
-6. (Optional) Add any environment variables from `.env.example`.
-7. Click **Deploy**.
-
-### Option B: Via Vercel CLI
-```bash
-npm install -g vercel
-vercel
-```
-
-The included [`vercel.json`](file:///c:/Users/sumit/OneDrive/other%20files/KisanMitra%20AI/vercel.json) file automatically handles Single Page Application (SPA) routing rewrites, ensuring all sub-paths (`/dashboard`, `/crop-doctor`, `/market`, `/sell-smart`) load correctly on direct refresh.
-
----
-
-## 16. Backend & Architecture Integration
+## 15. Backend & Architecture Integration
 
 KisanMitra AI frontend operates autonomously with high-performance client-side pathology and mandi intelligence modules. When connecting to production microservices (e.g., Python FastAPI for custom PyTorch/TensorFlow models or e-NAM Government API gateways), simply point `VITE_API_BASE_URL` to your backend server.
 
 ---
 
-## 17. Safety & Responsible Agricultural Use
+## 16. Safety & Responsible Agricultural Use
 
 - **Pesticide & Treatment Disclaimer:**  
   Treatment and pesticide guidance provided by KisanMitra AI is intended strictly for informational decision support. Farmers must only use products approved for their specific crop and agro-climatic region by national and state agricultural authorities. Always follow the product label instructions for application timing, PPE, and dilution. Consult a certified local agricultural extension officer or Krishi Vigyan Kendra (KVK) specialist before chemical applications.
@@ -388,19 +357,8 @@ KisanMitra AI frontend operates autonomously with high-performance client-side p
 
 ---
 
-## 18. Product Screenshots
 
-| Farmer Dashboard | Crop Doctor AI |
-| :---: | :---: |
-| *Real-time farm overview, crop health, and market signals* | *Instant leaf pathology scan with severity scoring* |
-
-| Market Intelligence | Sell Smart AI |
-| :---: | :---: |
-| *Freight-adjusted net return comparison across mandis* | *Multi-factor decision engine and split selling plan* |
-
----
-
-## 19. Future Roadmap
+## 17. Future Roadmap
 
 - [ ] **Live Government e-NAM / Agmarknet API Integration** for 2,000+ real-time mandi feeds.
 - [ ] **Satellite NDVI Field Health Monitoring** via Sentinel-2 satellite imagery.
@@ -411,7 +369,7 @@ KisanMitra AI frontend operates autonomously with high-performance client-side p
 
 ---
 
-## 20. License
+## 18. License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
