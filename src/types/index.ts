@@ -10,6 +10,19 @@ export type NavigationTab =
   | 'notifications'
   | 'profile';
 
+export type FarmCropStatus = 'Healthy' | 'Needs Attention' | 'High Risk';
+
+export interface TreatmentRecord {
+  id: string;
+  date: string;
+  actionEn: string;
+  actionHi: string;
+  categoryEn: string;
+  categoryHi: string;
+  notesEn: string;
+  notesHi: string;
+}
+
 export interface UserProfile {
   id: string;
   name: string;
@@ -32,11 +45,21 @@ export interface FarmCrop {
   acreage: number;
   sowingDate: string;
   healthScore: number;
-  healthStatus: 'good' | 'warning' | 'critical';
+  healthStatus: FarmCropStatus;
   diseaseRisk: 'low' | 'medium' | 'high';
   waterStatus: 'good' | 'adequate' | 'deficit';
   marketOpportunity: 'high' | 'good' | 'moderate';
+  lastDiagnosis: string;
+  lastDiagnosisHindi: string;
   lastCheckedDate: string;
+  nextCheckDate: string;
+  stage: string;
+  stageHindi: string;
+  healthTrend: { date: string; score: number }[];
+  treatmentHistory: TreatmentRecord[];
+  aiRecommendationsEn: string[];
+  aiRecommendationsHi: string[];
+  imageUrl: string;
 }
 
 export interface NotificationItem {
@@ -96,7 +119,7 @@ export interface DiagnosisResult {
   imageUrl: string;
   timestamp: string;
   
-  // Phase 4: Treatment & Prevention
+  // Phase 4 & 5: Treatment & Prevention
   whatHappenedEn: string;
   whatHappenedHi: string;
   immediateActionsEn: string[];

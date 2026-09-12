@@ -149,8 +149,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             ...c,
             healthScore: result.healthScore,
             diseaseRisk: result.severity === 'High' ? 'high' : result.severity === 'Moderate' ? 'medium' : 'low',
-            healthStatus: result.healthScore >= 80 ? 'good' : result.healthScore >= 60 ? 'warning' : 'critical',
+            healthStatus: result.healthScore >= 85 ? 'Healthy' : result.healthScore >= 70 ? 'Needs Attention' : 'High Risk',
             lastCheckedDate: 'Just now',
+            lastDiagnosis: `${result.disease} (${result.severity})`,
+            lastDiagnosisHindi: `${result.diseaseHindi} (${result.severityHindi})`,
           };
         }
         return c;

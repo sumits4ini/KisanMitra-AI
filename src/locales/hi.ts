@@ -136,7 +136,7 @@ export const hi = {
     safetyWarningTitle: 'महत्वपूर्ण कृषि सुरक्षा सूचना',
   },
 
-  // Phase 4: Treatment & Prevention
+  // Treatment & Prevention
   treatment: {
     sectionTitle: 'अपनी फसल की सुरक्षा कैसे करें',
     sectionSubtitle: 'खेत को सुरक्षित रखने हेतु व्यावहारिक व सुरक्षित कृषि उपाय',
@@ -172,10 +172,36 @@ export const hi = {
     actionCol: 'सुझाई गई कार्रवाई',
   },
 
-  // My Crops
+  // Phase 5: My Crops & Farm Health
   myCrops: {
-    title: 'मेरी फसलें',
-    subtitle: 'फसल के विकास चक्र, स्वास्थ्य इतिहास और आगामी निरीक्षण का पूरा ब्यौरा।',
+    title: 'मेरी फसलें व खेत का स्वास्थ्य',
+    subtitle: 'खेत का स्वास्थ्य स्कोर, सक्रिय रोग जोखिम और सुधार का पूरा ब्यौरा',
+    farmHealthOverview: 'खेत के समग्र स्वास्थ्य का दृश्य',
+    totalCultivated: 'कुल बोया गया रकबा',
+    averageHealth: 'औसत खेत स्वास्थ्य',
+    statusHealthy: 'उत्तम (Healthy)',
+    statusNeedsAttention: 'ध्यान देने योग्य (Needs Attention)',
+    statusHighRisk: 'उच्च जोखिम (High Risk)',
+    cropLabel: 'फसल',
+    areaLabel: 'रकबा',
+    healthLabel: 'स्वास्थ्य',
+    diseaseRiskLabel: 'रोग जोखिम',
+    lastDiagnosisLabel: 'अंतिम जांच',
+    nextCheckLabel: 'अगली जांच',
+    viewDetailedHealth: 'विस्तृत फसल स्वास्थ्य पृष्ठ देखें',
+    backToCrops: 'सभी फसलों पर वापस जाएं',
+    detailTitle: 'फसल स्वास्थ्य का विस्तृत विवरण',
+    overviewTab: '1. फसल का संक्षिप्त विवरण',
+    healthScoreTab: '2. स्वास्थ्य स्कोर',
+    trendTab: 'सरल स्वास्थ्य रुझान',
+    diagnosisHistoryTab: '3. जांच व रोग इतिहास',
+    treatmentHistoryTab: '4. उपचार व छिड़काव इतिहास',
+    aiRecommendationsTab: '5. AI विशेषज्ञ सिफारिशें',
+    recheckRemindersTab: '6. पुनः जांच रिमाइंडर',
+    rescanCropBtn: 'इस फसल की AI डॉक्टर से दोबारा जांच करें',
+    stageLabel: 'वर्तमान फसल अवस्था',
+    sowingDateLabel: 'बुवाई की तारीख',
+    weeklyProgression: 'पिछले 4 हफ्तों का स्वास्थ्य रुझान',
   },
 
   // Market

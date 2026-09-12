@@ -136,7 +136,7 @@ export const en = {
     safetyWarningTitle: 'Important Agronomic Safety Notice',
   },
 
-  // Phase 4: Treatment & Prevention
+  // Treatment & Prevention
   treatment: {
     sectionTitle: 'How to Protect Your Crop',
     sectionSubtitle: 'Actionable, safe agronomic recovery guidance for your field',
@@ -172,10 +172,36 @@ export const en = {
     actionCol: 'Recommended Action',
   },
 
-  // My Crops
+  // Phase 5: My Crops & Farm Health
   myCrops: {
-    title: 'My Farm Crops',
-    subtitle: 'Track crop growth cycles, health history, and upcoming field inspections.',
+    title: 'My Farm Crops & Health',
+    subtitle: 'Track field health scores, active disease risks, and recovery history',
+    farmHealthOverview: 'Farm Health Overview',
+    totalCultivated: 'Total Land Cultivated',
+    averageHealth: 'Average Farm Health',
+    statusHealthy: 'Healthy',
+    statusNeedsAttention: 'Needs Attention',
+    statusHighRisk: 'High Risk',
+    cropLabel: 'Crop',
+    areaLabel: 'Area',
+    healthLabel: 'Health',
+    diseaseRiskLabel: 'Disease Risk',
+    lastDiagnosisLabel: 'Last Diagnosis',
+    nextCheckLabel: 'Next Check',
+    viewDetailedHealth: 'View Detailed Crop Health',
+    backToCrops: 'Back to All Crops',
+    detailTitle: 'Detailed Crop Health Page',
+    overviewTab: '1. Crop Overview',
+    healthScoreTab: '2. Health Score',
+    trendTab: 'Simple Health Trend',
+    diagnosisHistoryTab: '3. Diagnosis History',
+    treatmentHistoryTab: '4. Treatment History',
+    aiRecommendationsTab: '5. AI Recommendations',
+    recheckRemindersTab: '6. Recheck Reminders',
+    rescanCropBtn: 'Scan this Crop with AI Doctor',
+    stageLabel: 'Current Crop Stage',
+    sowingDateLabel: 'Sowing Date',
+    weeklyProgression: 'Past 4-Week Health Progression',
   },
 
   // Market
