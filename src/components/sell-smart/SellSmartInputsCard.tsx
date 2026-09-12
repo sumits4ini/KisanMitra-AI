@@ -35,7 +35,7 @@ export const SellSmartInputsCard: React.FC<SellSmartInputsCardProps> = ({
           </p>
         </div>
 
-        {/* 1-click Test Scenarios for Judges */}
+        {/* 1-click Simulation Presets */}
         <div className="flex flex-wrap items-center gap-1.5 self-start sm:self-auto">
           <span className="text-[11px] font-bold text-stone-400 mr-1 flex items-center">
             <Sparkles className="w-3 h-3 text-amber-500 mr-1" />

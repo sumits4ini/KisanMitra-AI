@@ -73,9 +73,6 @@ export const LoginPage: React.FC = () => {
               <span className="text-2xl font-black tracking-tight text-white drop-shadow-md">
                 {t.appName}
               </span>
-              <span className="bg-emerald-500/90 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full tracking-wider shadow-xs">
-                AI MVP
-              </span>
             </div>
             <p className="text-xs font-semibold text-emerald-300 drop-shadow-sm">
               {t.tagline}
@@ -125,37 +122,18 @@ export const LoginPage: React.FC = () => {
         </div>
 
         {/* Right Column: Authentication & Demo Farmer Card */}
+        {/* Right Column: Authentication & Sample Onboarding Card */}
         <div className="lg:col-span-5 w-full">
           <div className="bg-white/95 backdrop-blur-xl border border-white/30 rounded-3xl shadow-2xl p-6 sm:p-8 text-stone-900 transition-all">
             
-            {/* Demo Farmer Top Callout - Primary for hackathons */}
-            <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-100/70 border border-emerald-300/80 shadow-xs text-center">
-              <div className="flex items-center justify-center space-x-1.5 mb-1 text-emerald-800 font-bold text-xs">
-                <Sparkles className="w-4 h-4 text-amber-600 animate-spin" style={{ animationDuration: '8s' }} />
-                <span>HACKATHON QUICK EVALUATION</span>
-              </div>
-              
-              <button
-                type="button"
-                onClick={loginAsDemo}
-                className="w-full mt-2 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white font-extrabold text-base py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-600/30 hover:shadow-xl hover:shadow-emerald-600/40 transition-all flex items-center justify-center space-x-2 group cursor-pointer touch-target"
-              >
-                <span>{t.auth.demoFarmerButton}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <p className="text-[11px] text-emerald-900/80 font-medium mt-2">
-                {t.auth.demoFarmerSubtext}
+            {/* Card Header */}
+            <div className="mb-5 text-center sm:text-left">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+                {mode === 'login' ? t.auth.loginTab : t.auth.signupTab}
+              </h2>
+              <p className="text-xs text-stone-600 font-medium mt-1">
+                {t.auth.welcomeSubtitle}
               </p>
-            </div>
-
-            {/* Divider */}
-            <div className="relative flex py-2 items-center">
-              <div className="flex-grow border-t border-stone-200"></div>
-              <span className="flex-shrink mx-3 text-stone-400 text-[11px] font-bold tracking-wider">
-                {t.auth.orDivider}
-              </span>
-              <div className="flex-grow border-t border-stone-200"></div>
             </div>
 
             {/* Tab switch between Login and Signup */}
@@ -163,7 +141,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => { setMode('login'); setErrorMessage(''); }}
-                className={`py-2 text-center rounded-lg transition-all ${
+                className={`py-2 text-center rounded-lg transition-all cursor-pointer ${
                   mode === 'login'
                     ? 'bg-white text-emerald-800 shadow-xs'
                     : 'text-stone-500 hover:text-stone-800'
@@ -174,7 +152,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => { setMode('signup'); setErrorMessage(''); }}
-                className={`py-2 text-center rounded-lg transition-all ${
+                className={`py-2 text-center rounded-lg transition-all cursor-pointer ${
                   mode === 'signup'
                     ? 'bg-white text-emerald-800 shadow-xs'
                     : 'text-stone-500 hover:text-stone-800'
@@ -229,7 +207,7 @@ export const LoginPage: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow transition-colors touch-target"
+                  className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-colors cursor-pointer touch-target"
                 >
                   {t.auth.loginButton}
                 </button>
@@ -239,7 +217,7 @@ export const LoginPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setMode('signup')}
-                    className="text-xs font-bold text-emerald-700 hover:underline"
+                    className="text-xs font-bold text-emerald-700 hover:underline cursor-pointer"
                   >
                     {t.auth.signUpLink}
                   </button>
@@ -309,9 +287,26 @@ export const LoginPage: React.FC = () => {
                   </div>
                 </div>
 
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    {t.auth.passwordLabel}
+                  </label>
+                  <div className="relative">
+                    <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                    <input
+                      type="password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder={t.auth.passwordPlaceholder}
+                      className="w-full pl-10 pr-4 py-2 bg-stone-50 border border-stone-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all outline-none"
+                    />
+                  </div>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full mt-2 bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow transition-colors touch-target"
+                  className="w-full mt-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-colors cursor-pointer touch-target"
                 >
                   {t.auth.createAccountButton}
                 </button>
@@ -321,7 +316,7 @@ export const LoginPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setMode('login')}
-                    className="text-xs font-bold text-emerald-700 hover:underline"
+                    className="text-xs font-bold text-emerald-700 hover:underline cursor-pointer"
                   >
                     {t.auth.loginLink}
                   </button>
@@ -329,19 +324,44 @@ export const LoginPage: React.FC = () => {
               </form>
             )}
 
-            {/* Safety badge at bottom of card */}
-            <div className="mt-5 pt-3 border-t border-stone-100 flex items-center justify-center space-x-1.5 text-[11px] text-stone-500">
+            {/* Subtle Divider */}
+            <div className="relative flex py-4 items-center">
+              <div className="flex-grow border-t border-stone-200"></div>
+              <span className="flex-shrink mx-3 text-stone-400 text-[11px] font-bold tracking-wider">
+                {t.auth.orDivider}
+              </span>
+              <div className="flex-grow border-t border-stone-200"></div>
+            </div>
+
+            {/* Instant Sample Farm Experience */}
+            <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 hover:border-emerald-300 transition-colors">
+              <button
+                type="button"
+                onClick={loginAsDemo}
+                className="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-sm transition-all flex items-center justify-center space-x-2 group cursor-pointer touch-target"
+              >
+                <span>{t.auth.demoFarmerButton}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <p className="text-[11px] text-stone-600 font-medium text-center mt-2">
+                {t.auth.demoFarmerSubtext}
+              </p>
+            </div>
+
+            {/* Security and quality badge */}
+            <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-center space-x-1.5 text-[11px] text-stone-500">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Free open prototype for agricultural hackathons</span>
+              <span>AI-Powered Agricultural Decision Support Platform</span>
             </div>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 w-full text-center py-4 text-xs font-medium text-stone-300/80 bg-stone-950/60 backdrop-blur-md border-t border-white/10 px-4">
-        <p>
-          {t.appName} &bull; {t.safetyNoticeShort}
+      <footer className="relative z-10 w-full text-center py-4 text-xs font-medium text-stone-300/90 bg-stone-950/70 backdrop-blur-md border-t border-white/10 px-4">
+        <p className="max-w-3xl mx-auto">
+          {t.appName} &bull; {t.tagline} &bull; {t.safetyNoticeShort}
         </p>
       </footer>
     </div>

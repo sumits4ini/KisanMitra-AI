@@ -13,7 +13,7 @@ export const DashboardView: React.FC = () => {
       {/* 1 & 2. Greeting & Farm Summary (Location, Farm Size, Main Crop, Large Check My Crop CTA) */}
       <FarmSummaryHeader />
 
-      {/* 30-Second Judge Overview & 5-Step System: Scan Crop -> Understand Problem -> Action Guidance -> Compare Markets -> Sell Smarter */}
+      {/* How It Works & 5-Step System: Scan Crop -> Understand Problem -> Action Guidance -> Compare Markets -> Sell Smarter */}
       <HowItWorksSection />
 
 

@@ -120,7 +120,7 @@ export const ImageDropzone: React.FC<ImageDropzoneProps> = ({
         </div>
       )}
 
-      {/* Preloaded Hackathon Test Samples Gallery */}
+      {/* Sample Leaf Inspection Gallery */}
       <div className="pt-2">
         <div className="flex items-center space-x-1.5 text-xs font-black uppercase tracking-wider text-stone-500 mb-2.5">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />

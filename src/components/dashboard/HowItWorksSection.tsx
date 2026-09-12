@@ -75,7 +75,7 @@ export const HowItWorksSection: React.FC = () => {
 
   return (
     <div className="bg-white border-2 border-stone-200 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
-      {/* 30-Second Overview Banner (Judge Communication) */}
+      {/* Platform Overview Banner */}
       <div className="bg-gradient-to-r from-emerald-950 via-teal-900 to-stone-900 text-white rounded-2xl p-5 sm:p-6 shadow-md">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1.5">
@@ -87,7 +87,7 @@ export const HowItWorksSection: React.FC = () => {
                 {t.dashboard.howItWorksTitle}
               </span>
             </div>
-            {/* The Explicit Judge Innovation Equation */}
+            {/* The Core Innovation Equation */}
             <h2 className="text-base sm:text-xl font-black text-white tracking-tight">
               {t.dashboard.corePathway}
             </h2>
@@ -96,13 +96,13 @@ export const HowItWorksSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Reset Demo Button for Judges */}
+          {/* Quick Reset Sample Data Button */}
           {user?.isDemo && (
             <button
               type="button"
               onClick={resetDemo}
               className="self-start md:self-center bg-white/10 hover:bg-white/20 border border-white/20 text-white font-extrabold text-xs px-4 py-2.5 rounded-xl transition-all flex items-center space-x-2 cursor-pointer flex-shrink-0"
-              title="Reset all demo crops, diagnoses, and notifications back to Ramesh Kumar default"
+              title="Reset sample crops, diagnoses, and notifications back to original defaults"
             >
               <RotateCcw className="w-3.5 h-3.5 text-amber-300" />
               <span>{t.dashboard.resetDemoBtn}</span>

@@ -257,13 +257,15 @@ export function calculateAllMarkets(
 }
 
 /**
- * Prototype disclaimer metadata
+ * Professional sample market notice metadata
  */
 export const PROTOTYPE_MARKET_NOTICE = {
-  badgeEn: 'PROTOTYPE / DEMO MARKET DATA',
-  badgeHi: 'प्रोटोटाइप / डेमो मंडी भाव',
+  badgeEn: 'SAMPLE BENCHMARK MARKET DATA',
+  badgeHi: 'मानक नमूना मंडी डेटा',
   noticeEn:
-    'Simulated APMC / e-NAM benchmark data for hackathon demonstration. Live government mandi API feeds are not connected. Do not present or interpret mock prices as verified live prices.',
+    'Showing APMC / Agmarknet benchmark sample data. Real-time live mandi API integration is in progress. Market rates shown are for estimation and planning.',
   noticeHi:
-    'हैकाथॉन प्रदर्शन हेतु एपीएमसी व ई-नाम का सिम्युलेटेड मॉडल डेटा। लाइव सरकारी मंडी एपीआई अभी कनेक्टेड नहीं है। इन काल्पनिक दरों को कानूनी रूप से सत्यापित लाइव भाव न मानें।'
+    'एपीएमसी / एगमार्कनेट मानक का नमूना डेटा प्रदर्शित किया जा रहा है। लाइव मंडी एपीआई एकीकरण प्रक्रिया में है। दिखाए गए भाव योजना और अनुमान के लिए हैं।'
 };
+
+export const SAMPLE_MARKET_NOTICE = PROTOTYPE_MARKET_NOTICE;

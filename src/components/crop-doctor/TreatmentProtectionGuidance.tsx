@@ -26,7 +26,7 @@ export const TreatmentProtectionGuidance: React.FC<TreatmentProtectionGuidancePr
 
   const handleSetReminder = () => {
     setReminderSet(true);
-    // In demo mode, trigger a visual confirmation and schedule a local notification
+    // Trigger a visual confirmation and schedule a local notification
     const reminderItem = {
       id: 'reminder_' + Date.now(),
       type: 'reminder' as const,

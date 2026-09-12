@@ -14,11 +14,12 @@ import {
   RotateCcw, 
   Menu, 
   X,
-  Wheat
+  Wheat,
+  ShieldCheck
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { 
     user, 
     currentTab, 
@@ -30,13 +31,15 @@ export const Navbar: React.FC = () => {
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems: { tab: NavigationTab; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { tab: 'dashboard', label: t.nav.dashboard, icon: Sprout },
-    { tab: 'crop-doctor', label: t.nav.cropDoctor, icon: Stethoscope },
-    { tab: 'my-crops', label: t.nav.myCrops, icon: Wheat },
-    { tab: 'market', label: t.nav.market, icon: Store },
-    { tab: 'sell-smart', label: t.nav.sellSmart, icon: TrendingUp },
-    { tab: 'ai-assistant', label: t.nav.aiAssistant, icon: Bot },
+  const navItems = [
+    { tab: 'dashboard' as NavigationTab, label: t.nav.dashboard, icon: Sprout },
+    { tab: 'crop-doctor' as NavigationTab, label: t.nav.cropDoctor, icon: Stethoscope },
+    { tab: 'my-crops' as NavigationTab, label: t.nav.myCrops, icon: Wheat },
+    { tab: 'market' as NavigationTab, label: t.nav.market, icon: Store },
+    { tab: 'sell-smart' as NavigationTab, label: t.nav.sellSmart, icon: TrendingUp },
+    { tab: 'ai-assistant' as NavigationTab, label: t.nav.aiAssistant, icon: Bot },
+    { tab: 'notifications' as NavigationTab, label: t.nav.notifications, icon: Bell, badge: unreadCount },
+    { tab: 'profile' as NavigationTab, label: t.nav.profile, icon: User },
   ];
 
   const handleTabClick = (tab: NavigationTab) => {
@@ -46,15 +49,15 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-xs">
-      {/* Top Banner for Demo & Safety Notice */}
-      <div className="bg-emerald-900 text-white text-xs py-1.5 px-4">
+      {/* Top Banner for Safety Guidance & Language */}
+      <div className="bg-emerald-950 text-emerald-100 text-xs py-1.5 px-4 border-b border-emerald-900/50">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center space-x-2">
-            <span className="bg-amber-400 text-stone-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full tracking-wider">
-              {t.common.demoBadge}
-            </span>
-            <span className="hidden sm:inline text-stone-200 truncate max-w-md">
-              {t.safetyNoticeShort}
+          <div className="flex items-center space-x-2 text-stone-300">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+            <span className="text-[11px] font-medium truncate max-w-xl">
+              {language === 'hi'
+                ? 'उत्पाद लेबल व स्थानीय कृषि दिशानिर्देशों के अनुसार केवल अनुमोदित कृषि उत्पादों का उपयोग करें।'
+                : 'Use approved agricultural products according to their labels and local agricultural guidance.'}
             </span>
           </div>
 
@@ -64,7 +67,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={resetDemo}
                 title={t.nav.resetDemo}
-                className="flex items-center space-x-1 text-emerald-200 hover:text-white transition-colors text-[11px] font-medium bg-emerald-800/80 px-2.5 py-0.5 rounded"
+                className="flex items-center space-x-1 text-emerald-300 hover:text-white transition-colors text-[11px] font-medium bg-emerald-900/80 hover:bg-emerald-800 px-2.5 py-0.5 rounded cursor-pointer"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>{t.nav.resetDemo}</span>
@@ -82,7 +85,7 @@ export const Navbar: React.FC = () => {
           <button 
             type="button" 
             onClick={() => setTab('dashboard')}
-            className="flex items-center space-x-3 text-left group"
+            className="flex items-center space-x-3 text-left group cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-green-700 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <Sprout className="w-6 h-6 text-white" />
@@ -91,9 +94,6 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <span className="text-xl font-extrabold text-stone-900 tracking-tight">
                   {t.appName}
-                </span>
-                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded-sm">
-                  PROTOTYPE
                 </span>
               </div>
               <p className="text-[11px] font-medium text-emerald-700 leading-none">

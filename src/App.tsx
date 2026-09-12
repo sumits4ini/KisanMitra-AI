@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { AppProvider, useApp } from './context/AppContext';
 import { LoginPage } from './components/auth/LoginPage';
@@ -12,9 +12,11 @@ import { SellSmartView } from './components/sell-smart/SellSmartView';
 import { AIAssistantView } from './components/ai-assistant/AIAssistantView';
 import { NotificationsView } from './components/notifications/NotificationsView';
 import { ProfileView } from './components/profile/ProfileView';
+import { LegalModal, type LegalModalType } from './components/common/LegalModal';
 
 const MainLayout: React.FC = () => {
   const { isAuthenticated, currentTab, toast, dismissToast } = useApp();
+  const [legalModal, setLegalModal] = useState<LegalModalType>(null);
 
   if (!isAuthenticated) {
     return <LoginPage />;
@@ -71,15 +73,43 @@ const MainLayout: React.FC = () => {
 
       {/* Desktop & Tablet Footer */}
       <footer className="hidden lg:block border-t border-stone-200 bg-white py-6 text-center text-xs text-stone-500">
-        <div className="max-w-7xl mx-auto px-4 space-y-1">
-          <p className="font-bold text-stone-700">
+        <div className="max-w-7xl mx-auto px-4 space-y-2">
+          <p className="font-bold text-stone-800 text-sm">
             KisanMitra AI &bull; From Crop Health to Better Markets
           </p>
-          <p className="text-[11px] text-stone-400 max-w-2xl mx-auto">
-            Hackathon prototype for agricultural AI decision-making. Always verify pesticide recommendations with official product labels and certified agricultural extension officers.
+          <p className="text-xs text-stone-500 max-w-2xl mx-auto">
+            AI-powered agricultural decision support for smarter crop care and market decisions.
           </p>
+          <div className="flex items-center justify-center space-x-4 pt-1 text-xs text-stone-400 font-medium">
+            <button
+              type="button"
+              onClick={() => setLegalModal('privacy')}
+              className="hover:text-emerald-700 transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+            <span>&bull;</span>
+            <button
+              type="button"
+              onClick={() => setLegalModal('terms')}
+              className="hover:text-emerald-700 transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </button>
+            <span>&bull;</span>
+            <button
+              type="button"
+              onClick={() => setLegalModal('contact')}
+              className="hover:text-emerald-700 transition-colors cursor-pointer"
+            >
+              Contact Support
+            </button>
+          </div>
         </div>
       </footer>
+
+      {/* Legal & Support Modal */}
+      <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
 
       {/* Mobile Bottom Navigation */}
       <BottomNavigation />

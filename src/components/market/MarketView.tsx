@@ -112,7 +112,7 @@ export const MarketView: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Mandatory Prototype / Demo Market Data Notice */}
+      {/* 2. Benchmark Sample Market Data Notice */}
       <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 sm:p-5 shadow-xs">
         <div className="flex items-start space-x-3">
           <AlertTriangle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
@@ -122,7 +122,7 @@ export const MarketView: React.FC = () => {
                 {language === 'hi' ? PROTOTYPE_MARKET_NOTICE.badgeHi : PROTOTYPE_MARKET_NOTICE.badgeEn}
               </span>
               <span className="text-xs font-bold text-amber-900">
-                {language === 'hi' ? 'सत्यापित लाइव दर सूचना' : 'Simulated Rates Disclaimer'}
+                {language === 'hi' ? 'बाजार दर सूचना' : 'Market Price Advisory'}
               </span>
             </div>
             <p className="text-xs text-amber-900 font-medium leading-relaxed">

@@ -95,7 +95,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setCrops([...DEFAULT_DEMO_CROPS]);
     setNotifications([...DEFAULT_NOTIFICATIONS]);
     setCurrentTab('dashboard');
-    showToast('Logged in as Demo Farmer: Ramesh Kumar (Haryana, India &bull; 5 Acres Tomato)');
+    showToast('Welcome, Ramesh Kumar (Sample Farm: Karnal, Haryana &bull; 5 Acres Tomato)');
   };
 
   const loginCustom = (name: string, phone: string, location: string, acres: number) => {
@@ -129,7 +129,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     localStorage.removeItem('kisanmitra_notifs');
     localStorage.removeItem('kisanmitra_diagnoses');
     setCurrentTab('dashboard');
-    showToast('Demo data successfully reset to Ramesh Kumar baseline (Karnal, Haryana, 5A Tomato)!');
+    showToast('Sample farm data successfully restored to original baseline (Karnal, Haryana &bull; 5A Tomato)!');
   };
 
 

@@ -37,8 +37,8 @@ export const FarmSummaryHeader: React.FC = () => {
             </h1>
             <p className="text-emerald-100 text-sm sm:text-base font-medium mt-1">
               {language === 'hi' 
-                ? 'आज के खेत के आंकड़े और मंडी के ताजा अवसर आपकी सेवा में प्रस्तुत हैं।' 
-                : 'Here is your real-time crop health summary and nearby mandi opportunities.'}
+                ? 'आपका खेत समृद्ध हो रहा है, और आपकी संभावनाएं भी।' 
+                : 'Your farm is growing, and so are your possibilities.'}
             </p>
           </div>
 

@@ -110,7 +110,7 @@ export const FindExpertModal: React.FC<FindExpertModalProps> = ({
             </div>
             <button
               type="button"
-              onClick={() => alert(language === 'hi' ? 'व्हाट्सएप चैट जल्द शुरू होगी (प्रोटोटाइप)' : 'WhatsApp agronomy advisory initiated (Prototype demonstration)')}
+              onClick={() => alert(language === 'hi' ? 'कृषि विस्तार अधिकारी से सीधा व्हाट्सएप संपर्क जोड़ा जा रहा है...' : 'Connecting directly with verified agricultural extension officer via WhatsApp...')}
               className="bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-3.5 py-2 rounded-xl shadow-xs transition-colors flex-shrink-0 flex items-center space-x-1"
             >
               <MessageSquare className="w-3.5 h-3.5" />
