@@ -1,9 +1,9 @@
 import React from 'react';
 import { FarmSummaryHeader } from './FarmSummaryHeader';
+import { HowItWorksSection } from './HowItWorksSection';
 import { CropHealthOverview } from './CropHealthOverview';
 import { TodaysAdviceCard } from './TodaysAdviceCard';
 import { QuickActionsGrid } from './QuickActionsGrid';
-import { PathwayBanner } from './PathwayBanner';
 import { DashboardAlerts } from './DashboardAlerts';
 import { RecentActivitySection } from './RecentActivitySection';
 
@@ -13,8 +13,9 @@ export const DashboardView: React.FC = () => {
       {/* 1 & 2. Greeting & Farm Summary (Location, Farm Size, Main Crop, Large Check My Crop CTA) */}
       <FarmSummaryHeader />
 
-      {/* Visual Innovation Pathway: CROP HEALTH → MARKET → PROFIT */}
-      <PathwayBanner />
+      {/* 30-Second Judge Overview & 5-Step System: Scan Crop -> Understand Problem -> Action Guidance -> Compare Markets -> Sell Smarter */}
+      <HowItWorksSection />
+
 
       {/* 3, 4, 5, 6. Crop Health Card (Tomato, 82/100, Good), Disease Risk (Medium), Water Status (Good), Market Opportunity (Good) */}
       <CropHealthOverview />

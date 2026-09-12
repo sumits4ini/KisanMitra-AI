@@ -20,9 +20,13 @@ interface AppContextType {
   clearNotifications: () => void;
   updateFarmerSettings: (settings: Partial<UserProfile>) => void;
   saveDiagnosis: (result: DiagnosisResult) => void;
+  toast: string | null;
+  showToast: (msg: string) => void;
+  dismissToast: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
+
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<UserProfile | null>(() => {
@@ -53,6 +57,19 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [toast, setToast] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToast(msg);
+    setTimeout(() => {
+      setToast(null);
+    }, 4500);
+  };
+
+  const dismissToast = () => {
+    setToast(null);
+  };
+
   useEffect(() => {
     if (user) {
       localStorage.setItem('kisanmitra_user', JSON.stringify(user));
@@ -78,6 +95,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setCrops([...DEFAULT_DEMO_CROPS]);
     setNotifications([...DEFAULT_NOTIFICATIONS]);
     setCurrentTab('dashboard');
+    showToast('Logged in as Demo Farmer: Ramesh Kumar (Haryana, India &bull; 5 Acres Tomato)');
   };
 
   const loginCustom = (name: string, phone: string, location: string, acres: number) => {
@@ -86,7 +104,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       name: name || 'Farmer Friend',
       phone: phone || '+91 98765 00000',
       location: location || 'Karnal',
-      state: 'Haryana',
+      state: 'Haryana, India',
       landSizeAcres: acres || 4,
       primaryCrop: 'Tomato',
       isDemo: false,
@@ -111,7 +129,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     localStorage.removeItem('kisanmitra_notifs');
     localStorage.removeItem('kisanmitra_diagnoses');
     setCurrentTab('dashboard');
+    showToast('Demo data successfully reset to Ramesh Kumar baseline (Karnal, Haryana, 5A Tomato)!');
   };
+
 
   const setTab = (tab: NavigationTab) => {
     setCurrentTab(tab);
@@ -182,10 +202,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         clearNotifications,
         updateFarmerSettings,
         saveDiagnosis,
+        toast,
+        showToast,
+        dismissToast,
       }}
     >
       {children}
     </AppContext.Provider>
+
   );
 };
 
