@@ -1,4 +1,4 @@
-import type { UserProfile, FarmCrop, NotificationItem } from '../types';
+import type { UserProfile, FarmCrop, NotificationItem, CropActivity } from '../types';
 
 export const DEFAULT_DEMO_FARMER: UserProfile = {
   id: 'farmer_ramesh_001',
@@ -43,6 +43,61 @@ export const DEFAULT_DEMO_CROPS: FarmCrop[] = [
     marketOpportunity: 'good',
     lastCheckedDate: '2 days ago',
   }
+];
+
+export const DEFAULT_DEMO_ACTIVITIES: CropActivity[] = [
+  {
+    id: 'act_1',
+    type: 'diagnosis',
+    titleEn: 'AI Crop Health Diagnostic Completed',
+    titleHi: 'AI फसल स्वास्थ्य जांच संपन्न',
+    descEn: 'Early Blight risk detected on lower leaves. Overall health stable at 82/100.',
+    descHi: 'निचले पत्तों पर अगेती झुलसा का जोखिम पहचाना गया। कुल स्वास्थ्य 82/100 स्थिर।',
+    timeEn: 'Today, 08:30 AM',
+    timeHi: 'आज, प्रातः 08:30',
+    badgeEn: 'Health: 82/100',
+    badgeHi: 'स्वास्थ्य: 82/100',
+    status: 'warning',
+  },
+  {
+    id: 'act_2',
+    type: 'market',
+    titleEn: 'Azadpur Mandi Rate Spike',
+    titleHi: 'आजादपुर मंडी भाव उछाल',
+    descEn: 'Wholesale tomato rate reached ₹2,250/quintal (+₹250 higher than local market).',
+    descHi: 'टमाटर का थोक भाव ₹2,250/क्विंटल पहुंचा (स्थानीय मंडी से +₹250 अधिक लाभ)।',
+    timeEn: 'Today, 06:15 AM',
+    timeHi: 'आज, प्रातः 06:15',
+    badgeEn: '+₹250/qtl',
+    badgeHi: '+₹250/क्विंटल',
+    status: 'positive',
+  },
+  {
+    id: 'act_3',
+    type: 'irrigation',
+    titleEn: 'Drip Irrigation Cycle Completed',
+    titleHi: 'ड्रिप सिंचाई चक्र पूर्ण',
+    descEn: '45-minute scheduled morning drip completed. Root-zone moisture optimal.',
+    descHi: 'सुबह का 45 मिनट ड्रिप सिंचाई चक्र पूर्ण। जड़ क्षेत्र में पर्याप्त नमी।',
+    timeEn: 'Yesterday, 05:45 PM',
+    timeHi: 'कल, शाम 05:45',
+    badgeEn: 'Water: Good',
+    badgeHi: 'नमी: उत्तम',
+    status: 'positive',
+  },
+  {
+    id: 'act_4',
+    type: 'inspection',
+    titleEn: 'Recommended Foliage Recheck',
+    titleHi: 'पत्ते की पुनः जांच अनुशंसित',
+    descEn: 'Recheck lower tomato leaves in 2 days to verify non-spreading of blight.',
+    descHi: 'झुलसा रोग न फैलने की पुष्टि के लिए 2 दिन बाद निचले पत्तों की पुनः जांच करें।',
+    timeEn: 'In 2 Days',
+    timeHi: '2 दिन में',
+    badgeEn: 'Scheduled',
+    badgeHi: 'निर्धारित',
+    status: 'neutral',
+  },
 ];
 
 export const DEFAULT_NOTIFICATIONS: NotificationItem[] = [

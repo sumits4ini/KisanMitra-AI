@@ -50,3 +50,17 @@ export interface NotificationItem {
   read: boolean;
   severity: 'info' | 'warning' | 'success';
 }
+
+export interface CropActivity {
+  id: string;
+  type: 'diagnosis' | 'market' | 'irrigation' | 'inspection';
+  titleEn: string;
+  titleHi: string;
+  descEn: string;
+  descHi: string;
+  timeEn: string;
+  timeHi: string;
+  badgeEn?: string;
+  badgeHi?: string;
+  status: 'positive' | 'warning' | 'neutral';
+}
