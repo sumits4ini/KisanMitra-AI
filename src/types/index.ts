@@ -148,3 +148,36 @@ export interface CropHealthHistoryItem {
   recommendedActionHi: string;
   imageUrl?: string;
 }
+
+// Phase 6: Market Intelligence Types
+export interface MandiOption {
+  id: string;
+  code: string; // 'Market A' | 'Market B' | 'Market C'
+  codeHindi: string; // 'मंडी क' | 'मंडी ख' | 'मंडी ग'
+  name: string;
+  nameHindi: string;
+  distanceKm: number;
+  pricePerQuintal: number;
+  trend: 'up' | 'down' | 'stable';
+  trendPercent: number;
+  mandiCessPercent: number;
+  handlingPerQuintal: number;
+  fixedTransportBase: number; // base transport for 20 quintals
+}
+
+export interface MandiCalculationResult extends MandiOption {
+  quantityQuintals: number;
+  grossRevenue: number;
+  transportCost: number;
+  mandiCess: number;
+  handlingCost: number;
+  weighingFee: number;
+  otherCharges: number;
+  netReturn: number;
+  netPerQuintal: number;
+  isBestOption: boolean;
+  bestReasonEn?: string;
+  bestReasonHi?: string;
+  additionalProfitVsSecondBest?: number;
+}
+
