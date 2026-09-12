@@ -1,0 +1,150 @@
+export const hi = {
+  // App Branding
+  appName: 'किसानमित्र AI',
+  tagline: 'फसल स्वास्थ्य से बेहतर मंडी तक',
+  safetyNoticeShort: 'सूचना: केवल अनुमोदित उत्पादों का उपयोग करें और कृषि विशेषज्ञ से सलाह लें।',
+  safetyNoticeFull: 'केवल अपनी फसल और क्षेत्र के लिए स्वीकृत उत्पादों का उपयोग करें। उत्पाद लेबल के निर्देशों का पालन करें और जरूरत पड़ने पर योग्य कृषि विशेषज्ञ से परामर्श लें।',
+
+  // Navigation
+  nav: {
+    dashboard: 'डैशबोर्ड',
+    cropDoctor: 'क्रॉप डॉक्टर',
+    myCrops: 'मेरी फसलें',
+    market: 'मंडी भाव',
+    sellSmart: 'स्मार्ट बिक्री',
+    aiAssistant: 'AI सहायक',
+    notifications: 'सूचनाएं',
+    profile: 'प्रोफाइल व सेटिंग्स',
+    logout: 'लॉग आउट',
+    resetDemo: 'डेमो डेटा रीसेट करें',
+  },
+
+  // Auth / Login Page
+  auth: {
+    welcomeTitle: 'किसानमित्र AI में आपका स्वागत है',
+    welcomeSubtitle: 'भारतीय किसान भाइयों के लिए आधुनिक AI मार्गदर्शक',
+    loginTab: 'लॉगिन',
+    signupTab: 'नया खाता बनाएं',
+    phoneOrEmailLabel: 'मोबाइल नंबर या ईमेल',
+    phoneOrEmailPlaceholder: 'उदा. 9876543210 या farmer@gmail.com',
+    passwordLabel: 'पासवर्ड',
+    passwordPlaceholder: 'अपना पासवर्ड दर्ज करें',
+    fullNameLabel: 'पूरा नाम',
+    fullNamePlaceholder: 'उदा. रमेश कुमार',
+    locationLabel: 'जिला / राज्य',
+    locationPlaceholder: 'उदा. करनाल, हरियाणा',
+    landSizeLabel: 'खेत का रकबा (एकड़)',
+    landSizePlaceholder: 'उदा. 5',
+    loginButton: 'पोर्टल में लॉगिन करें',
+    createAccountButton: 'नए किसान के रूप में पंजीकरण करें',
+    orDivider: 'या तुरंत हैकथॉन डेमो देखें',
+    demoFarmerButton: 'डेमो किसान (रमेश कुमार) के रूप में आगे बढ़ें',
+    demoFarmerSubtext: 'हरियाणा के टमाटर किसान के पूरे डेटा व लाइव मंडी भाव के साथ तुरंत लॉगिन',
+    dontHaveAccount: 'क्या आपके पास खाता नहीं है?',
+    alreadyHaveAccount: 'क्या आपके पास पहले से खाता है?',
+    signUpLink: 'साइन अप करें',
+    loginLink: 'साइन इन करें',
+    trustBadge1: '12+ राज्यों में उपयोगी',
+    trustBadge2: 'सभी किसानों के लिए निःशुल्क',
+    trustBadge3: 'सटीक मंडी मूल्य तुलना',
+    mockLoginError: 'कृपया सही मोबाइल नंबर या पासवर्ड दर्ज करें',
+  },
+
+  // Dashboard
+  dashboard: {
+    greeting: 'नमस्ते, {name} जी 👋',
+    farmLocationBadge: '📍 {location}',
+    myFarmTitle: 'मेरे खेत की स्थिति',
+    landArea: 'कुल रकबा',
+    acres: 'एकड़',
+    activeCrops: 'वर्तमान फसल',
+    cropHealth: 'फसल स्वास्थ्य स्कोर',
+    waterStatus: 'नमी / पानी की स्थिति',
+    diseaseRisk: 'रोग का जोखिम',
+    marketOpportunity: 'मंडी अवसर',
+    checkMyCropBtn: '📷 फसल की जांच करें (AI डॉक्टर)',
+    todaysAdviceTitle: 'आज की AI सलाह',
+    todaysAdviceDesc: 'सुबह की नमी के कारण आपके टमाटर की फसल में फफूंद संक्रमण का मध्यम जोखिम दिख रहा है। निचले पत्तों की जांच करें और अनावश्यक ऊपरी छिड़काव से बचें।',
+    quickActionsTitle: 'त्वरित सेवाएं',
+    actionDiagnose: 'फसल रोग जांच',
+    actionMarket: 'मंडी भाव देखें',
+    actionProfit: 'शुद्ध मुनाफा निकालें',
+    actionAskAI: 'AI से पूछें',
+    statusGood: 'उत्तम',
+    statusModerate: 'मध्यम जोखिम',
+    statusHigh: 'उच्च जोखिम',
+    statusAdequate: 'संतोषजनक',
+    workflowTitle: 'किसानमित्र AI का सीधा फायदा',
+    workflowStep1: '1. फसल रोग की सही पहचान',
+    workflowStep2: '2. सही मंडी का चुनाव',
+    workflowStep3: '3. अधिकतम शुद्ध मुनाफा',
+  },
+
+  // Crop Doctor
+  cropDoctor: {
+    title: 'AI फसल डॉक्टर',
+    subtitle: 'रोग, गंभीरता और सुरक्षित उपचार के उपायों की तत्काल पहचान के लिए फसल के पत्ते का फोटो लें या अपलोड करें।',
+    uploadPlaceholder: 'AI फसल डॉक्टर मॉड्यूल तैयार है। अगले चरण में पूर्ण जांच शुरू करें।',
+  },
+
+  // My Crops
+  myCrops: {
+    title: 'मेरी फसलें',
+    subtitle: 'फसल के विकास चक्र, स्वास्थ्य इतिहास और आगामी निरीक्षण का पूरा ब्यौरा।',
+  },
+
+  // Market
+  market: {
+    title: 'मंडी भाव व समझदारी',
+    subtitle: 'आस-पास की मंडियों के भाव, ढुलाई खर्च की कटौती और अधिकतम शुद्ध मुनाफे की तुलना।',
+  },
+
+  // Sell Smart
+  sellSmart: {
+    title: 'स्मार्ट बिक्री - सही समय व मंडी',
+    subtitle: 'AI सिफारिश: आज ही बेचें, 1-2 दिन रुकें या फसल को किश्तों में बेचें।',
+  },
+
+  // AI Assistant
+  aiAssistant: {
+    title: 'किसानमित्र AI सहायक',
+    subtitle: 'फसल रोग, खाद-दवा, मौसम और मंडी भाव को लेकर हिंदी या अंग्रेजी में सवाल पूछें।',
+  },
+
+  // Notifications
+  notifications: {
+    title: 'सूचनाएं व अलर्ट',
+    subtitle: 'मौसम की चेतावनी, रोग फैलने का अलर्ट और मंडी में अचानक भाव बढ़ने की सूचना।',
+    markAllRead: 'सभी पढ़ा हुआ मार्क करें',
+    clearAll: 'सभी हटाएं',
+    noNotifications: 'इस समय कोई नई सूचना नहीं है।',
+  },
+
+  // Profile
+  profile: {
+    title: 'किसान प्रोफाइल व सेटिंग्स',
+    subtitle: 'अपने खेत का विवरण, सूचनाएं और भाषा की प्राथमिकताएं प्रबंधित करें।',
+    farmerDetails: 'किसान का विवरण',
+    fullName: 'पूरा नाम',
+    phone: 'मोबाइल नंबर',
+    location: 'स्थान व जिला',
+    farmSize: 'खेत का रकबा',
+    preferredLanguage: 'पसंदीदा भाषा',
+    notificationSettings: 'अलर्ट सेटिंग्स',
+    notificationsToggle: 'मौसम और रोग चेतावनी के लिए सूचनाएं चालू रखें',
+    locationToggle: 'निकटतम मंडी हेतु स्वचालित जीपीएस स्थान',
+    demoModeActive: 'वर्तमान में डेमो मोड सक्रिय है (रमेश कुमार)',
+    resetDemoBtn: 'डेमो डेटा को मूल स्थिति में रीसेट करें',
+    logoutBtn: 'लॉग आउट करें',
+  },
+
+  // Common
+  common: {
+    loading: 'लोड हो रहा है...',
+    save: 'परिवर्तन सुरक्षित करें',
+    cancel: 'रद्द करें',
+    back: 'वापस जाएं',
+    viewDetails: 'विवरण देखें',
+    demoBadge: 'डेमो मोड',
+  }
+};
