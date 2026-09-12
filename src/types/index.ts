@@ -181,3 +181,63 @@ export interface MandiCalculationResult extends MandiOption {
   additionalProfitVsSecondBest?: number;
 }
 
+// Phase 7: Sell Smart Decision Types
+export type SellDecisionType = 'SELL NOW' | 'WAIT' | 'SELL PARTIALLY';
+export type SellRiskLevel = 'Low' | 'Moderate' | 'High';
+
+export type PriceTrendType = 'rising' | 'stable' | 'falling';
+export type StorageType = 'shaded_crates' | 'ventilated_shed' | 'cold_storage' | 'none';
+export type MarketDemandType = 'high' | 'moderate' | 'weak';
+
+export interface SellSmartInputs {
+  crop: string;
+  quantityQuintals: number;
+  currentPrice: number;
+  expectedTrend: PriceTrendType;
+  estimatedShelfLifeDays: number;
+  storageAvailability: StorageType;
+  transportCost: number;
+  marketDemand: MarketDemandType;
+  targetMandi: string;
+}
+
+export interface SmartSellingPlanBatch {
+  quintals: number;
+  targetMandi: string;
+  mandiNameEn: string;
+  mandiNameHi: string;
+  actionEn: string;
+  actionHi: string;
+  timingEn: string;
+  timingHi: string;
+  expectedRate: number;
+  netEstimatedReturn: number;
+  rationaleEn: string;
+  rationaleHi: string;
+}
+
+export interface SellSmartDecision {
+  recommendation: SellDecisionType;
+  headlineEn: string;
+  headlineHi: string;
+  badgeEn: string;
+  badgeHi: string;
+  reasonEn: string;
+  reasonHi: string;
+  estimatedPriceRange: { min: number; max: number };
+  riskLevel: SellRiskLevel;
+  riskLabelEn: string;
+  riskLabelHi: string;
+  confidencePercent: number;
+  estimatedAdditionalReturn: number;
+  holdingWindowTextEn: string;
+  holdingWindowTextHi: string;
+  plan: {
+    batch1: SmartSellingPlanBatch;
+    batch2: SmartSellingPlanBatch;
+    currentReturn: number;
+    optimizedReturn: number;
+    potentialDifference: number;
+  };
+}
+
